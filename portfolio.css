@@ -1,0 +1,90 @@
+.portfolio-section {
+    position: fixed;
+    left: 140px;
+    top: 300px;
+    transform: translateY(-50%);
+    font-family: 'Ubuntu Sans', sans-serif;
+    color: white;
+    text-align: left;
+    z-index: 22;
+    transition: left 0.5s ease;
+}
+
+.portfolio-section.hidden {
+    left: -100%;
+}
+
+.portfolio-header {
+    font-size: 100px;
+    font-weight: 900;
+}
+
+@keyframes flicker {
+    0%, 19% { opacity: 1; }
+    20%, 23% { opacity: 0.3; }
+    24%, 26% { opacity: 1; }
+    27%, 29% { opacity: 0.4; }
+    30%, 33% { opacity: 1; }
+    34%, 36% { opacity: 0.5; }
+    37%, 100% { opacity: 1; }
+}
+
+#pdfPic {
+    position: fixed;
+    left: 500px;
+    width: auto;
+    height: 90px;
+    top: 375px;
+    opacity: 0.5;
+    transition: bottom 0.5s ease, opacity 0.5s;
+    z-index: 23;
+    transition: left 0.5s ease;
+}
+
+#pdfPic.hidden {
+    left: -100%;
+}
+
+#pdfPic:hover {
+    animation: flicker 2s ease-in-out;
+    opacity: 1;
+}
+
+.image-stack {
+    position: fixed;
+    right: 350px;
+    top: 200px;
+    transition: right 0.5s ease;
+}
+
+.image-stack.hidden {
+    right: -100%;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    80% { transform: translateY(0); }
+    85% { transform: translateY(-50px); }
+    90% { transform: translateY(0); }
+    95% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+.image-stack img {
+    position: absolute;
+    width: 1000px;
+    animation: bounce 6s ease infinite;
+    box-shadow: -10px 20px 10px rgba(0,0,0,0.3);
+    filter: blur(15px);
+}
+
+.image-stack img:nth-child(1) { top: 0; left: 0; z-index: 10; animation-delay: 0s; }
+.image-stack img:nth-child(2) { top: 80px; left: -80px; z-index: 9; animation-delay: 0.1s; }
+.image-stack img:nth-child(3) { top: 160px; left: -160px; z-index: 8; animation-delay: 0.2s; }
+.image-stack img:nth-child(4) { top: 240px; left: -240px; z-index: 7; animation-delay: 0.3s; }
+.image-stack img:nth-child(5) { top: 320px; left: -320px; z-index: 6; animation-delay: 0.4s; }
+.image-stack img:nth-child(6) { top: 400px; left: -400px; z-index: 5; animation-delay: 0.5s; }
+.image-stack img:nth-child(7) { top: 480px; left: -480px; z-index: 4; animation-delay: 0.6s; }
+.image-stack img:nth-child(8) { top: 560px; left: -560px; z-index: 3; animation-delay: 0.7s; }
+.image-stack img:nth-child(9) { top: 640px; left: -640px; z-index: 2; animation-delay: 0.8s; }
+.image-stack img:nth-child(10) { top: 720px; left: -720px; z-index: 1; animation-delay: 0.9s; }

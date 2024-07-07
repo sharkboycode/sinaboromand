@@ -1,0 +1,233 @@
+/* home.css */
+
+/* برای تبلت‌ها */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #myPic {
+        display: none;
+    }
+
+    .button-container {
+        display: none;
+    }
+
+    .socialmedia.hidden {
+        left: -200%;
+    }
+
+    .socialmedia2.hidden {
+        left: -200%;
+    }
+
+    #aboutmePic {
+        display: none;
+    }
+
+    .about-me-section {
+        width: 70%;
+    }
+
+    .about-me-header {
+        font-size: 80px; /* یا هر اندازه مناسب دیگر */
+    }
+
+    .portfolio-header {
+        font-size: 70px;
+    }
+
+    .portfolio-section {
+        width: 80%;
+        top: 250px;
+    }
+
+    #pdfPic {
+        left: 400px;
+        height: 60px;
+        top: 305px;
+        opacity: 0.5;
+        transition: bottom 0.5s ease, opacity 0.5s;
+        z-index: 23;
+        transition: left 0.5s ease;
+    }
+    
+    .image-stack {
+        right: 150px;
+        top: 300px;
+    }
+
+    .instagram-container {
+        margin-right: 60px;
+    }
+
+    .instagram-container img {
+        width: 70px;
+    }
+    
+    .instagram-container p {
+        font-size: 15px;
+        left: 1px;
+    }
+
+    .telegram-container {
+        margin-right: 60px;
+    }
+    
+    .telegram-container img {
+        width: 70px;;
+    }
+    
+    .telegram-container p {
+        font-size: 15px;
+        left: 4px;
+    }
+
+    .discord-container {
+        margin-right: 60px;
+    }
+    
+    .discord-container img {
+        width: 70px;
+    }
+    
+    .discord-container p {
+        font-size: 15px;
+        left: 7px;
+    }
+
+    .linkedin-container {
+        margin-right: 60px;
+    }
+    
+    .linkedin-container img {
+        width: 70px;
+    }
+    
+    .linkedin-container p {
+        font-size: 15px;
+        left: 6px;
+    }
+
+    .whatsapp-container {
+        margin-right: 60px;
+    }
+    
+    .whatsapp-container img {
+        width: 70px;
+    }
+    
+    .whatsapp-container p {
+        font-size: 15px;
+        left: 3px;
+    }
+
+    .twitter-container {
+        margin-right: 60px;
+    }
+    
+    .twitter-container img {
+        width: 70px;
+    }
+    
+    .twitter-container p {
+        font-size: 15px;
+        left: 8px;
+    }
+
+    .facebook-container {
+        margin-right: 60px;
+    }
+    
+    .facebook-container img {
+        width: 70px;
+    }
+    
+    .facebook-container p {
+        font-size: 15px;
+        left: 4px;
+    }
+
+    .github-container {
+        margin-right: 60px;
+    }
+    
+    .github-container img {
+        width: 70px;
+    }
+    
+    .github-container p {
+        font-size: 15px;
+        left: 5px;
+    }
+
+    .skype-container {
+        margin-right: 60px;
+    }
+    
+    .skype-container img {
+        width: 70px;
+    }
+    
+    .skype-container p {
+        font-size: 15px;
+        left: 3px;
+    }
+
+    .google-container {
+        margin-right: 60px;
+    }
+    
+    .google-container img {
+        width: 70px;
+    }
+    
+    .google-container p {
+        font-size: 15px;
+        left: 6px;
+    }
+
+    .musiccover {
+        font-size: 70px;
+    }
+
+    .muscicover-container img.clicked {
+        transform: skewY(15deg) translateY(-320px);
+    }
+
+    .websites {
+        font-size: 60px;
+    }
+
+    .web-container img.clicked {
+        transform: skewY(15deg) translateY(-260px);
+        left: 0;
+    }
+
+    .logos {
+        font-size: 70px;
+    }
+
+    .logo-container img.clicked {
+        transform: skewY(15deg) translateY(-290px);
+        left: 0;
+    }
+
+    .books {
+        font-size: 70px;
+    }
+
+    .book-container img.clicked {
+        transform: skewY(15deg) translateY(-290px);
+        left: 0;
+    }
+
+    .codes {
+        font-size: 30px;
+        width: 75%;
+    }
+    
+    .codes img {
+        width: 50px;
+        bottom: -9px;
+        margin-left: 0px;
+    }
+    
+}

@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu Sans', sans-serif;
+    overflow-x: hidden; /* جلوگیری از اسکرول افقی */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 100vh; /* تغییر به حداقل ارتفاع */
+    padding: 0;
+}
+
+.name {
+    text-align: left;
+    margin: 20px;
+    margin-bottom: 0;
+}
+
+.name p {
+    margin: 0;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.button-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1; /* اطمینان از بالاتر بودن */
+}
+
+
+.button-container::-webkit-scrollbar {
+    display: none; /* مخفی کردن نوار اسکرول */
+}
+
+.nav-button {
+    flex: 0 0 auto;
+    margin: 0 5px;
+    padding: 12px 20px;
+    border: 1px solid #888;
+    background-color: transparent;
+    color: #888;
+    font-size: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: color 0.3s, opacity 0.3s;
+    opacity: 0.2;
+}
+
+.nav-button.first {
+    margin-left: 0; /* حذف مارجین سمت چپ برای دکمه اول */
+}
+
+.nav-button.last {
+    margin-right: 0; /* حذف مارجین سمت راست برای دکمه آخر */
+}
+
+.nav-button.active {
+    color: white;
+    opacity: 1;
+    border: 1px solid white;
+}
+
+.nav-button:hover {
+    color: white;
+    opacity: 1;
+    border: 1px solid white;
+}
+
+.side-container {
+    display: flex;
+    width: 100%;
+    height: auto; /* تنظیم ارتفاع خودکار */
+    padding: 0;
+    margin: 20px 0 0; /* افزودن مارجین از بالا */
+}
+
+.side {
+    flex: 1;
+    height: auto; /* تنظیم ارتفاع خودکار */
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    flex-direction: column; /* اضافه شده برای ستون‌بندی */
+    width: 50%; /* هر کدام 50 درصد عرض */
+}
+
+.left {
+    background-color: #e9ff70; /* رنگ دیو سمت چپ */
+    margin-right: 2px; /* مارجین 2 پیکسلی بین دیوها */
+    border-top-left-radius: 0; /* حذف گردی گوشه بالا سمت چپ */
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.right {
+    background-color: #70d6ff; /* رنگ دیو سمت راست */
+    margin-left: 2px; /* مارجین 2 پیکسلی بین دیوها */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 0; /* حذف گردی گوشه پایین سمت راست */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-text {
+    color: black; /* تغییر رنگ به مشکی */
+    text-align: left;
+    margin-bottom: 10px; /* فاصله از پایین */
+}
+
+.header-text p {
+    margin-bottom: 0; /* حذف مارجین پایین */
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* قرار دادن آیتم‌ها به صورت ستونی */
+}
+
+.slide-item {
+    width: calc(100% - 20px);
+    margin: 5px 0px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.1); /* تغییر رنگ پس‌زمینه به مشکی با شفافیت 10 درصد */
+    border-radius: 50px; /* گرد کردن کناره‌ها به 50 پیکسل */
+    text-align: center;
+    font-weight: 600;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+    color: #222; /* تغییر رنگ متن داخل آیتم‌ها به یک رنگ مشکی کم‌رنگ‌تر */
+}
+
+.slide-item.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-item.hide-left {
+    animation: fadeOutLeft 0.5s forwards;
+}
+
+.slide-item.show-right {
+    animation: fadeInRight 0.5s forwards;
+}
+
+.slide-item.hide-right {
+    animation: fadeOutRight 0.5s forwards;
+}
+
+.slide-item.show-left {
+    animation: fadeInLeft 0.5s forwards;
+}
+
+@keyframes fadeOutLeft {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeOutRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-item:nth-child(1).show {
+    transition-delay: 0.1s;
+}
+
+.slide-item:nth-child(2).show {
+    transition-delay: 0.2s;
+}
+
+.slide-item:nth-child(3).show {
+    transition-delay: 0.3s;
+}
+
+.slide-image {
+    margin-right: 7px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* گرد کردن تصویر */
+}
+
+.no-border-radius {
+    border-radius: 0; /* حذف گرد کردن تصویر */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center; /* قرار دادن دایره‌ها در مرکز */
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 100%; /* عرض کامل برای مرکز کردن */
+}
+
+.dot {
+    height: 5px; /* تغییر ارتفاع دایره‌ها */
+    width: 5px; /* تغییر عرض دایره‌ها */
+    margin: 0 2px; /* کاهش فاصله بین دایره‌ها */
+    background-color: rgba(0, 0, 0, 0.1); /* تغییر رنگ دایره‌های غیرفعال به مشکی با شفافیت 10 درصد */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active {
+    background-color: white;
+}
+
+.about-me {
+    width: 100%;
+    border-radius: 0; /* حذف گرد کردن کناره‌ها */
+    padding: 0;
+    margin-top: 4px; /* فاصله از دیوهای بالا */
+    box-sizing: border-box;
+}
+
+.about-me h2 {
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 15px 0 5px 0;
+    text-align: left; /* چپ‌چین کردن متن */
+}
+
+.about-me p {
+    color: #666; /* تغییر رنگ پاراگراف به یک رنگ مشکی کم‌رنگ‌تر */
+    font-size: 12px;
+    font-weight: 600;
+    margin: 5px 0;
+    text-align: left; /* چپ‌چین کردن متن */
+}
+
+.profile-picture {
+    position: absolute;
+    bottom: 0;
+    left: 75%;
+    transform: translateX(-50%);
+    width: auto;
+    height: 150px; /* ارتفاع تصویر */
+    margin-top: 10px;
+}
+
+.portfolio {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px; /* کاهش مارجین بالا به 4 پیکسل */
+    box-sizing: border-box;
+    background-color: #fcf5c7; /* رنگ پس‌زمینه */
+    border-radius: 50px; /* گرد کردن کناره‌ها */
+}
+
+.portfolio h2 {
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 0 10px;
+    text-align: left; /* چپ‌چین کردن متن */
+}
+
+.download-icon-bg {
+    background-color: rgba(0, 0, 0, 0.1); /* رنگ پس‌زمینه دایره با شفافیت 10 درصد */
+    border-radius: 50%; /* گرد کردن کامل */
+    padding: 10px; /* فاصله داخلی برای ایجاد دایره */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* حذف خط زیر لینک */
+}
+
+.download-icon-bg:visited {
+    text-decoration: none; /* حذف خط زیر لینک بعد از بازدید */
+}
+
+.download-icon {
+    color: #222;
+    font-size: 24px;
+    animation: bounce 2s infinite; /* افزودن انیمیشن بونس */
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(1px);
+    }
+    40% {
+        transform: translateY(-6px);
+    }
+    60% {
+        transform: translateY(-2px);
+    }
+}
+
+.side-container.new {
+    display: flex;
+    width: 100%;
+    height: auto; /* تنظیم ارتفاع خودکار */
+    padding: 0;
+    margin-top: 4px; /* افزودن مارجین از بالا */
+}
+
+.side.new-left {
+    flex: 1;
+    height: auto; /* تنظیم ارتفاع خودکار */
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    flex-direction: column; /* اضافه شده برای ستون‌بندی */
+    background-color: #ffc09f; /* رنگ دیو سمت چپ جدید */
+    margin-right: 2px; /* مارجین 2 پیکسلی بین دیوها */
+    border-top-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.side.new-right {
+    flex: 1;
+    height: auto; /* تنظیم ارتفاع خودکار */
+    padding: 10px;
+    color: black;
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    flex-direction: column; /* اضافه شده برای ستون‌بندی */
+    background-color: #adf7b6; /* رنگ دیو سمت راست جدید */
+    margin-left: 2px; /* مارجین 2 پیکسلی بین دیوها */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.link-text {
+    color: #222; /* رنگ متن لینک‌ها */
+    text-decoration: none; /* حذف خط زیر لینک‌ها */
+    font-weight: 600; /* وزن فونت */
+    font-size: 12px; /* اندازه فونت */
+    display: flex; /* نمایش به صورت فلکس */
+    align-items: center; /* قرار دادن آیتم‌ها در مرکز به صورت عمودی */
+}
+
+.link-text img {
+    margin-right: 10px; /* فاصله بین تصویر و متن */
+}
+
+.smaller {
+    width: 25px;
+    height: 25px;
+    border-radius: 0;
+    margin-left: 3px;
+}
+
+.rounded {
+    width: 25px;
+    height: 25px;
+    border-radius: 30%;
+}
+
+.message {
+    color: black;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+    margin: auto; /* مرکز کردن متن */
+    padding: 10px;
+    line-height: 1.8;
+}
+
+.message-line {
+    display: inline-flex; /* نمایش به صورت فلکس درون خط */
+    align-items: center; /* مرکز کردن عمودی محتوا */
+}
+
+.message-gif {
+    margin-left: 0px; /* فاصله بین متن و گیف */
+    width: 25px; /* تنظیم اندازه گیف */
+    height: 25px; /* تنظیم اندازه گیف */
+}
+
+.music-covers {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.music-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.music-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.music-image {
+    width: calc(50% - 2px); /* تنظیم عرض تصاویر به 50% با محاسبه مارجین‌ها */
+}
+
+.music-image:first-child {
+    margin-right: 2px;
+}
+
+.music-image:last-child {
+    margin-left: 2px;
+}
+
+
+.music-image.single-image {
+    width: calc(50% - 2px); /* تغییر عرض تصاویر تکی به 50% */
+    margin: 0;
+}
+
+.website-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.website-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.website-image {
+    width: calc(50% - 2px); /* تنظیم عرض تصاویر به 50% با محاسبه مارجین‌ها */
+    cursor: pointer;
+}
+
+.website-image:first-child {
+    margin-right: 2px;
+}
+
+.website-image:last-child {
+    margin-left: 2px;
+}
+
+.website-image.single-image {
+    width: calc(50% - 2px); /* تغییر عرض تصاویر تکی به 50% */
+    margin: 0;
+}
+
+.logos-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.logo-image {
+    width: calc(50% - 2px); /* تنظیم عرض تصاویر به 50% با محاسبه مارجین‌ها */
+    cursor: pointer;
+}
+
+.logo-image:first-child {
+    margin-right: 2px;
+}
+
+.logo-image:last-child {
+    margin-left: 2px;
+}
+
+.logo-image.single-image {
+    width: calc(50% - 2px); /* تغییر عرض تصاویر تکی به 50% */
+    margin: 0;
+}
+
+.books-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.book-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.book-image {
+    width: calc(50% - 2px); /* تنظیم عرض تصاویر به 50% با محاسبه مارجین‌ها */
+    cursor: pointer;
+}
+
+.book-image:first-child {
+    margin-right: 2px;
+}
+
+.book-image:last-child {
+    margin-left: 2px;
+}
+
+.book-image.single-image {
+    width: calc(50% - 2px); /* تغییر عرض تصاویر تکی به 50% */
+    margin: 0;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+#overlay img {
+    max-width: 100%;
+    max-height: 100%;
+    animation: zoomIn 0.5s;
+}
+
+/* تنظیم انیمیشن برای زوم */
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+#overlay img {
+    max-width: 100%;
+    max-height: 100%;
+    animation: zoomIn 0.5s;
+}
+
+#overlay.zoom-out img {
+    animation: zoomOut 0.5s;
+}
+
+
+/* Add these styles to your mobile.css */
+
+/* Initial state for hidden elements */
+.hide {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* State for visible elements */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s, transform 0.5s;
+}

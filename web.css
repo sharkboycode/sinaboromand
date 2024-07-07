@@ -1,0 +1,102 @@
+.website-container {
+    position: fixed;
+    z-index: 5;
+    top: 85%;
+    left: 170px;
+    transition: left 0.5s ease;
+}
+
+.web-container {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 2;
+    margin: 0;
+    user-select: none;
+    transition: margin 0.4s ease-in-out;
+}
+
+.web-container img {
+    width: 500px;
+    height: auto;
+    left: 0;
+    position: relative;
+    margin-right: -300px;
+    transform-origin: right;
+    transition: transform 0.5s ease, left 0.5s ease;
+    transform: skewY(15deg);
+    box-shadow: 20px 10px 20px rgba(0,0,0,1);
+    border-radius: 7px;
+    margin-left: 0;
+}
+
+.web-container.active {
+    cursor: grabbing;
+    left: 0;
+}
+
+.web-container img:hover {
+    transform: skewY(15deg) translateY(-100px);
+    cursor: pointer;
+}
+
+.web-container img.clicked {
+    transform: skewY(15deg) translateY(-280px);
+    left: 0;
+}
+
+.web-container img:nth-child(1) {
+    z-index: 20;
+}
+
+.web-container img:nth-child(2) {
+    z-index: 19;
+}
+
+.web-container img:nth-child(3) {
+    z-index: 18;
+}
+
+.web-container img:nth-child(4) {
+    z-index: 17;
+}
+
+.web-container img:nth-child(5) {
+    z-index: 16;
+}
+
+.web-container img:nth-child(6) {
+    z-index: 15;
+}
+
+.web-container img:nth-child(7) {
+    z-index: 14;
+}
+
+.web-container img:nth-child(8) {
+    z-index: 13;
+}
+
+.web-container img:nth-child(9) {
+    z-index: 12;
+}
+
+.web-container img:nth-child(10) {
+    z-index: 11;
+}
+
+.web-container img:nth-child(11) {
+    z-index: 10;
+}
+
+.websites {
+    position: fixed;
+    top: 150px;
+    left: 170px;
+    color: white;
+    font-size: 100px;
+    font-weight: 900;
+    z-index: 21;
+    opacity: 1;
+    transition: opacity 0.2s ease, left 0.5s ease;
+}

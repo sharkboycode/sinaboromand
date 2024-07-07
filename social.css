@@ -1,0 +1,635 @@
+.socialmedia {
+    position: fixed;
+    left: 140px;
+    top: 25%;
+    z-index: 22;
+    display: flex;
+    transition: left 0.5s ease;
+}
+
+.socialmedia.hidden {
+    left: -150%;
+}
+
+.instagram-container {
+    text-align: center;
+    margin-right: 90px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.instagram-container img {
+    width: 100px;
+    height: auto;
+    margin: 0 0 5px 0;
+    transition: filter 0.5s ease;
+}
+
+.instagram-container p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.instagram-container:hover {
+    transform: scale(1.1);
+}
+
+.instagram-container:hover img {
+    filter: brightness(1000%) saturate(1000%) invert(0%) sepia(100%) saturate(0%) hue-rotate(0) brightness(1000%) contrast(1000%);
+}
+
+.text-instagram-original, .text-instagram-hover {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    right: 0;
+}
+
+.text-instagram-original {
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    z-index: 2;
+    opacity: 1;
+    background-clip: text;
+}
+
+.text-instagram-hover {
+    background-color: white;
+    background-clip: text;
+    opacity: 0;
+    z-index: 1;
+}
+
+.instagram-container:hover .text-instagram-original {
+    opacity: 0;
+}
+
+.instagram-container:hover .text-instagram-hover {
+    opacity: 1;
+}
+
+.telegram-container {
+    text-align: center;
+    margin-right: 90px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.telegram-container img {
+    width: 100px;
+    height: auto;
+    margin: 0 0 5px 0;
+    transition: filter 0.5s ease;
+}
+
+.telegram-container p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.telegram-container:hover {
+    transform: scale(1.1);
+}
+
+.telegram-container:hover img {
+    filter: brightness(1000%) saturate(1000%) invert(0%) sepia(100%) saturate(0%) hue-rotate(0) brightness(1000%) contrast(1000%);
+}
+
+.text-telegram-original, .text-telegram-hover {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    right: 5px;
+}
+
+.text-telegram-original {
+    background: -webkit-linear-gradient(left, #0088cc, #0088cc);
+    z-index: 2;
+    opacity: 1;
+    background-clip: text;
+}
+
+.text-telegram-hover {
+    background-color: white;
+    background-clip: text;
+    opacity: 0;
+    z-index: 1;
+}
+
+.telegram-container:hover .text-telegram-original {
+    opacity: 0;
+}
+
+.telegram-container:hover .text-telegram-hover {
+    opacity: 1;
+}
+
+.discord-container {
+    text-align: center;
+    margin-right: 90px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.discord-container img {
+    width: 100px;
+    height: auto;
+    margin: 0 0 5px 0;
+    transition: filter 0.5s ease;
+}
+
+.discord-container p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.discord-container:hover {
+    transform: scale(1.1);
+}
+
+.discord-container:hover img {
+    filter: brightness(1000%) saturate(1000%) invert(0%) sepia(100%) saturate(0%) hue-rotate(0) brightness(1000%) contrast(1000%);
+}
+
+.text-discord-original, .text-discord-hover {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    right: 15px;
+}
+
+.text-discord-original {
+    background: -webkit-linear-gradient(left, #516bf4, #516bf4);
+    z-index: 2;
+    opacity: 1;
+    background-clip: text;
+}
+
+.text-discord-hover {
+    background-color: white;
+    background-clip: text;
+    opacity: 0;
+    z-index: 1;
+}
+
+.discord-container:hover .text-discord-original {
+    opacity: 0;
+}
+
+.discord-container:hover .text-discord-hover {
+    opacity: 1;
+}
+
+.linkedin-container {
+    text-align: center;
+    margin-right: 90px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.linkedin-container img {
+    width: 100px;
+    height: auto;
+    margin: 0 0 5px 0;
+    transition: filter 0.5s ease;
+}
+
+.linkedin-container p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.linkedin-container:hover {
+    transform: scale(1.1);
+}
+
+.linkedin-container:hover img {
+    filter: brightness(1000%) saturate(1000%) invert(0%) sepia(100%) saturate(0%) hue-rotate(0) brightness(1000%) contrast(1000%);
+}
+
+.text-linkedin-original, .text-linkedin-hover {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    right: 10px;
+}
+
+.text-linkedin-original {
+    background: -webkit-linear-gradient(left, #0077b5, #0077b5);
+    z-index: 2;
+    opacity: 1;
+    background-clip: text;
+}
+
+.text-linkedin-hover {
+    background-color: white;
+    background-clip: text;
+    opacity: 0;
+    z-index: 1;
+}
+
+.linkedin-container:hover .text-linkedin-original {
+    opacity: 0;
+}
+
+.linkedin-container:hover .text-linkedin-hover {
+    opacity: 1;
+}
+
+.whatsapp-container {
+    text-align: center;
+    margin-right: 90px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.whatsapp-container img {
+    width: 100px;
+    height: auto;
+    margin: 0 0 5px 0;
+    transition: filter 0.5s ease;
+}
+
+.whatsapp-container p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.whatsapp-container:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-container:hover img {
+    filter: brightness(1000%) saturate(1000%) invert(0%) sepia(100%) saturate(0%) hue-rotate(0) brightness(1000%) contrast(1000%);
+}
+
+.text-whatsapp-original, .text-whatsapp-hover {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    right: 0px;
+}
+
+.text-whatsapp-original {
+    background: -webkit-linear-gradient(left, #25d366, #25d366);
+    z-index: 2;
+    opacity: 1;
+    background-clip: text;
+}
+
+.text-whatsapp-hover {
+    background-color: white;
+    background-clip: text;
+    opacity: 0;
+    z-index: 1;
+}
+
+.whatsapp-container:hover .text-whatsapp-original {
+    opacity: 0;
+}
+
+.whatsapp-container:hover .text-whatsapp-hover {
+    opacity: 1;
+}
+
+.socialmedia2 {
+    position: fixed;
+    left: 140px;
+    top: 60%;
+    z-index: 22;
+    display: flex;
+    transition: left 0.5s ease;
+}
+
+.socialmedia2.hidden {
+    left: -100%;
+}
+
+.twitter-container {
+    text-align: center;
+    margin-right: 90px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.twitter-container img {
+    width: 100px;
+    height: auto;
+    margin: 0 0 5px 0;
+    transition: filter 0.5s ease;
+}
+
+.twitter-container p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.twitter-container:hover {
+    transform: scale(1.1);
+}
+
+.twitter-container:hover img {
+    filter: brightness(1000%) saturate(1000%) invert(0%) sepia(100%) saturate(0%) hue-rotate(0) brightness(1000%) contrast(1000%);
+}
+
+.text-twitter-original, .text-twitter-hover {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    right: 40px;
+}
+
+.text-twitter-original {
+    background: -webkit-linear-gradient(left, #fff, #fff);
+    z-index: 2;
+    opacity: 1;
+    background-clip: text;
+}
+
+.text-twitter-hover {
+    background-color: white;
+    background-clip: text;
+    opacity: 0;
+    z-index: 1;
+}
+
+.twitter-container:hover .text-twitter-original {
+    opacity: 0;
+}
+
+.twitter-container:hover .text-twitter-hover {
+    opacity: 1;
+}
+
+.facebook-container {
+    text-align: center;
+    margin-right: 90px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.facebook-container img {
+    width: 100px;
+    height: auto;
+    margin: 0 0 5px 0;
+    transition: filter 0.5s ease;
+}
+
+.facebook-container p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.facebook-container:hover {
+    transform: scale(1.1);
+}
+
+.facebook-container:hover img {
+    filter: brightness(1000%) saturate(1000%) invert(0%) sepia(100%) saturate(0%) hue-rotate(0) brightness(1000%) contrast(1000%);
+}
+
+.text-facebook-original, .text-facebook-hover {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    right: 5px;
+}
+
+.text-facebook-original {
+    background: -webkit-linear-gradient(left, #1877f2, #1877f2);
+    z-index: 2;
+    opacity: 1;
+    background-clip: text;
+}
+
+.text-facebook-hover {
+    background-color: white;
+    background-clip: text;
+    opacity: 0;
+    z-index: 1;
+}
+
+.facebook-container:hover .text-facebook-original {
+    opacity: 0;
+}
+
+.facebook-container:hover .text-facebook-hover {
+    opacity: 1;
+}
+
+.github-container {
+    text-align: center;
+    margin-right: 90px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.github-container img {
+    width: 100px;
+    height: auto;
+    margin: 0 0 5px 0;
+    transition: filter 0.5s ease;
+}
+
+.github-container p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.github-container:hover {
+    transform: scale(1.1);
+}
+
+.github-container:hover img {
+    filter: brightness(1000%) saturate(1000%) invert(0%) sepia(100%) saturate(0%) hue-rotate(0) brightness(1000%) contrast(1000%);
+}
+
+.text-github-original, .text-github-hover {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    right: 15px;
+}
+
+.text-github-original {
+    background: -webkit-linear-gradient(left, #3bffdd, #3bffdd);
+    z-index: 2;
+    opacity: 1;
+    background-clip: text;
+}
+
+.text-github-hover {
+    background-color: white;
+    background-clip: text;
+    opacity: 0;
+    z-index: 1;
+}
+
+.github-container:hover .text-github-original {
+    opacity: 0;
+}
+
+.github-container:hover .text-github-hover {
+    opacity: 1;
+}
+
+.skype-container {
+    text-align: center;
+    margin-right: 90px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.skype-container img {
+    width: 100px;
+    height: auto;
+    margin: 0 0 5px 0;
+    transition: filter 0.5s ease;
+}
+
+.skype-container p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.skype-container:hover {
+    transform: scale(1.1);
+}
+
+.skype-container:hover img {
+    filter: brightness(1000%) saturate(1000%) invert(0%) sepia(100%) saturate(0%) hue-rotate(0) brightness(1000%) contrast(1000%);
+}
+
+.text-skype-original, .text-skype-hover {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    right: 15px;
+}
+
+.text-skype-original {
+    background: -webkit-linear-gradient(left, #00aff0, #00aff0);
+    z-index: 2;
+    opacity: 1;
+    background-clip: text;
+}
+
+.text-skype-hover {
+    background-color: white;
+    background-clip: text;
+    opacity: 0;
+    z-index: 1;
+}
+
+.skype-container:hover .text-skype-original {
+    opacity: 0;
+}
+
+.skype-container:hover .text-skype-hover {
+    opacity: 1;
+}
+
+.google-container {
+    text-align: center;
+    margin-right: 90px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.google-container img {
+    width: 100px;
+    height: auto;
+    margin: 0 0 5px 0;
+    transition: filter 0.5s ease;
+}
+
+.google-container p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 900;
+    background: -webkit-linear-gradient(left, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: background 0.5s ease;
+    position: relative;
+}
+
+.google-container:hover {
+    transform: scale(1.1);
+}
+
+.google-container:hover img {
+    filter: brightness(1000%) saturate(1000%) invert(0%) sepia(100%) saturate(0%) hue-rotate(0) brightness(1000%) contrast(1000%);
+}
+
+.text-google-original, .text-google-hover {
+    position: absolute;
+    transition: opacity 0.5s ease;
+    right: 20px;
+}
+
+.text-google-original {
+    background: -webkit-linear-gradient(left, #4385f6, #eb4336, #fabc05, #34a855);
+    z-index: 2;
+    opacity: 1;
+    background-clip: text;
+}
+
+.text-google-hover {
+    background-color: white;
+    background-clip: text;
+    opacity: 0;
+    z-index: 1;
+}
+
+.google-container:hover .text-google-original {
+    opacity: 0;
+}
+
+.google-container:hover .text-google-hover {
+    opacity: 1;
+}
