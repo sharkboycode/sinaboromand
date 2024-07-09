@@ -58,7 +58,7 @@ body {
     border-radius: 50px;
     cursor: pointer;
     transition: color 0.3s, opacity 0.3s;
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 .nav-button.first {
